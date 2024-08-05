@@ -93,7 +93,10 @@ function Register() {
           </p>
           <Box className="flex pt-10 gap-2 flex-row justify-center items-center">
             {data.attendees.map((item, index) => (
-              <Box className="flex flex-col items-center justify-center  text-center">
+              <Box
+                key={index}
+                className="flex flex-col items-center justify-center  text-center"
+              >
                 <Image
                   className="w-44 h-44 border-2 p-4 border-purple-500 rounded-full"
                   alt=""
