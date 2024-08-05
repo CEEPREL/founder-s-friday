@@ -6,12 +6,15 @@ import React from "react";
 
 function WhatWeOffer() {
   return (
-    <Box className="flex flex-col">
+    <Box className="flex relative flex-col">
       <h1 className=" text-center pt-24 font-bold text-2xl">
         {data.what.title}
       </h1>
       {data.what.body.map((text, index) => (
-        <Box className="flex items-center pb-8 pt-16 mx-20 justify-between flex-row border-b border-gray-300">
+        <Box
+          key={index}
+          className="flex items-center pb-8 pt-16 mx-20 justify-between flex-row border-b border-gray-300"
+        >
           <Box
             key={index}
             className="flex bg-purple-500 w-4 h-4 rounded-full"
