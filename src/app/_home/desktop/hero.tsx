@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 import { data } from "@/constants/data";
 import { HeroWrapper } from "./style";
 import { Box, Button } from "@chakra-ui/react";
@@ -20,29 +21,53 @@ function Hero() {
   return (
     <>
       <Box className="flex relative ">
-        <Box className="flex  w-full">
+        <motion.div
+          animate={{ y: 0 }}
+          initial={{ y: -1000 }}
+          className="flex w-full"
+        >
           <Image
             width={800}
             alt="line"
-            className=" top-0 right-10 mlg: absolute"
+            className="top-0 right-10 mlg:absolute"
             src={data.svgs.line}
           />
-        </Box>
+        </motion.div>
 
         <Box className="flex w-full right-0 absolute">
-          <Box className=" relative w-full right-10">
-            <Box className="absolute top-32 right-44">
+          <Box className="relative w-full right-10">
+            <motion.div
+              animate={{ x: 0 }}
+              initial={{ x: 450 }}
+              transition={{ delay: 0.2, duration: 0.2 }}
+              className="absolute top-32 right-44"
+            >
               <Image width={220} src={data.images.one} alt="" />
-            </Box>
-            <Box className="right-4 top-52 absolute">
+            </motion.div>
+            <motion.div
+              animate={{ y: 0, scale: 1 }}
+              initial={{ scale: 0 }}
+              transition={{ delay: 0.2, duration: 0.2 }}
+              className="right-4 top-52 absolute"
+            >
               <Image width={220} src={data.images.two} alt="" />
-            </Box>
-            <Box className="absolute right-[250px] top-96 ">
+            </motion.div>
+            <motion.div
+              animate={{ rotate: 360, scale: 1 }}
+              initial={{ y: 0, scale: 0 }}
+              transition={{ delay: 0.3, duration: 0.3 }}
+              className="absolute right-[250px] top-96"
+            >
               <Image width={150} src={data.images.three} alt="" />
-            </Box>
-            <Box className="absolute right-[120px] top-[450px]">
+            </motion.div>
+            <motion.div
+              animate={{ rotate: 360, scale: 1 }}
+              initial={{ y: 0, scale: 0 }}
+              transition={{ delay: 0.4, duration: 0.4 }}
+              className="absolute right-[120px] top-[450px]"
+            >
               <Image width={100} src={data.images.four} alt="" />
-            </Box>
+            </motion.div>
           </Box>
         </Box>
       </Box>

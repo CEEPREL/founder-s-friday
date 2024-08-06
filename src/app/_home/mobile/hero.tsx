@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 import { data } from "@/constants/data";
 import { Box, Button } from "@chakra-ui/react";
 import Link from "next/link";
@@ -58,18 +59,37 @@ function Hero() {
 
                 <Box className="flex w-full gap-2 items-center justify-center right-0 absolute">
                   <Box className=" relative w-full right-10">
-                    <Box className="absolute top-32 right-32">
+                    <motion.div
+                      animate={{ y: 0 }}
+                      initial={{ y: -1000 }}
+                      className="absolute top-32 right-32"
+                    >
                       <Image width={220} src={data.images.one} alt="" />
-                    </Box>
-                    <Box className="right-0 top-52 absolute">
+                    </motion.div>
+                    <motion.div
+                      animate={{ x: 0 }}
+                      initial={{ x: 450 }}
+                      transition={{ delay: 0.2, duration: 0.2 }}
+                      className="right-0 top-52 absolute"
+                    >
                       <Image width={150} src={data.images.two} alt="" />
-                    </Box>
-                    <Box className="absolute right-[200px] top-96 ">
+                    </motion.div>
+                    <motion.div
+                      animate={{ y: 0, scale: 1 }}
+                      initial={{ scale: 0 }}
+                      transition={{ delay: 0.3, duration: 0.3 }}
+                      className="absolute right-[200px] top-96 "
+                    >
                       <Image width={150} src={data.images.three} alt="" />
-                    </Box>
-                    <Box className="absolute right-[90px] top-[400px]">
+                    </motion.div>
+                    <motion.div
+                      animate={{ rotate: 360, scale: 1 }}
+                      initial={{ y: 0, scale: 0 }}
+                      transition={{ delay: 0.4, duration: 0.4 }}
+                      className="absolute right-[90px] top-[400px]"
+                    >
                       <Image width={100} src={data.images.four} alt="" />
-                    </Box>
+                    </motion.div>
                   </Box>
                 </Box>
               </Box>
